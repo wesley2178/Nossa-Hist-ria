@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "Inter", system-ui, -apple-system, sans-serif;
+  --font-title: "Dancing Script", cursive;
+}
+
+/* Custom romantic scrollbar style */
+.scrollbar-rose::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-rose::-webkit-scrollbar-track {
+  background: rgba(244, 63, 94, 0.05);
+  border-radius: 8px;
+}
+.scrollbar-rose::-webkit-scrollbar-thumb {
+  background: rgba(244, 63, 94, 0.2);
+  border-radius: 8px;
+}
+.scrollbar-rose::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 63, 94, 0.4);
+}
