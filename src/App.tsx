@@ -149,23 +149,20 @@ export default function App() {
       document.removeEventListener('click', startAudioOnInteraction);
       document.removeEventListener('touchstart', startAudioOnInteraction);
       document.removeEventListener('keydown', startAudioOnInteraction);
-      document.removeEventListener('scroll', startAudioOnInteraction);
     };
 
-    // 1. Immediate play attempt
+    // 1. Immediate play attempt (if browser permits autoplay)
     try {
       loveAudio.setConfig(config);
       loveAudio.start();
-      setIsMusicPlaying(true);
     } catch (e) {
       console.warn('Autoplay blocked, waiting for user response/interaction');
     }
 
-    // 2. Queue interaction listeners if blocked or suspended
+    // 2. Queue interaction listeners if blocked or suspended (use valid mobile touch gestures)
     document.addEventListener('click', startAudioOnInteraction, { passive: true });
     document.addEventListener('touchstart', startAudioOnInteraction, { passive: true });
     document.addEventListener('keydown', startAudioOnInteraction, { passive: true });
-    document.addEventListener('scroll', startAudioOnInteraction, { passive: true });
 
     return () => {
       removeInteractionListeners();
