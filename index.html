@@ -1,26 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      (function() {
-        try {
-          var originalFetch = window.fetch;
-          var currentFetch = originalFetch;
-          Object.defineProperty(window, 'fetch', {
-            get: function() {
-              return currentFetch;
-            },
-            set: function(val) {
-              currentFetch = val;
-            },
-            configurable: true,
-            enumerable: true
-          });
-        } catch (e) {
-          // Fail-soft if redefinition is denied
-        }
-      })();
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nossa História - Linha do Tempo</title>
